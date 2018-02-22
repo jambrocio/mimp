@@ -1,0 +1,84 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	
+	<definition name="main" template="/vistas/templates/main.jsp">
+		<put-attribute name="titulo" value="BIENVENIDOS AL SISTEMA" />
+		<put-attribute name="cabecera" value="/vistas/templates/cabecera.jsp" />
+		<put-attribute name="pie" value="/vistas/templates/pie.jsp" />
+	</definition>
+	
+	<definition name="main_login" template="/vistas/templates/main_login.jsp">
+		<put-attribute name="titulo" value="MIMP" />
+		<put-attribute name="pie" value="/vistas/templates/pie.jsp" />
+	</definition>
+	
+	<definition name="error" extends="main_login">
+		<put-attribute name="contenido" value="/error.jsp" />
+	</definition>
+	
+	<definition name="login" extends="main_login">
+		<put-attribute name="contenido" value="/login.jsp" />
+	</definition>
+	
+	<definition name="resetear" extends="main_login">
+		<put-attribute name="contenido" value="/cambiarClave.jsp" />
+	</definition>
+	
+	<definition name="inicio" extends="main">
+		<put-attribute name="contenido" value="/vistas/index.jsp" />
+	</definition>
+	 
+	<definition name="muestra" extends="main">
+		<put-attribute name="contenido" value="/vistas/muestra.jsp" />
+		<put-attribute name="titulo" value="Detalle del Usuario" />
+	</definition>
+	
+	<definition name="usuario" extends="main">
+		<put-attribute name="contenido" value="/vistas/usuario.jsp" />
+		<put-attribute name="titulo" value="Cambio de clave" />
+	</definition>
+	
+	<!-- FICHA REGISTRO -->
+	<definition name="fichaRegistro/ficha_registro" extends="main">
+		<put-attribute name="contenido" value="/vistas/fichaRegistro/ficha_registro.jsp" />
+		<put-attribute name="titulo" value="Ficha de Registro" />
+	</definition>
+	<definition name="fichaRegistro/registro_caso" extends="main">
+		<put-attribute name="contenido" value="/vistas/fichaRegistro/registro_caso.jsp" />
+		<put-attribute name="titulo" value="Registro" />
+	</definition>
+	<definition name="fichaRegistro/legal" extends="main">
+		<put-attribute name="contenido" value="/vistas/fichaRegistro/legal.jsp" />
+		<put-attribute name="titulo" value="Legal" />
+	</definition>
+	<definition name="fichaRegistro/psicologico" extends="main">
+		<put-attribute name="contenido" value="/vistas/fichaRegistro/psicologico.jsp" />
+		<put-attribute name="titulo" value="Psicológico" />
+	</definition>
+	<definition name="fichaRegistro/social" extends="main">
+		<put-attribute name="contenido" value="/vistas/fichaRegistro/social.jsp" />
+		<put-attribute name="titulo" value="Social" />
+	</definition>
+	
+	<!-- REPORTES -->
+	<definition name="reportes/reporte_ficha_registro" extends="main">
+		<put-attribute name="contenido" value="/vistas/reportes/reporte_ficha_registro.jsp" />
+		<put-attribute name="titulo" value="Reporte Ficha de Registro" />
+	</definition>
+		
+	<!-- MANTENIMIENTO -->
+	<definition name="mantenimiento/usuarios" extends="main">
+		<put-attribute name="contenido" value="/vistas/mantenimiento/usuarios.jsp" />
+		<put-attribute name="titulo" value="Reporte de Usuarios" />
+	</definition>
+	<definition name="mantenimiento/menuUsuario" extends="main">
+		<put-attribute name="contenido" value="/vistas/mantenimiento/menu.jsp" />
+		<put-attribute name="titulo" value="Menu de Usuario" />
+	</definition>
+	
+	
+	
+</tiles-definitions>

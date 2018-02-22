@@ -1,0 +1,31 @@
+package pe.com.mimp.session;
+
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import pe.com.mimp.controller.LoginController;
+
+@WebListener
+public class SessionListener implements HttpSessionListener{
+	
+	@Autowired
+	LoginController loginController;
+	
+	@Override
+	public void sessionCreated(HttpSessionEvent event) {
+		System.out.println("==== Session is created ====");
+		
+		int sessionTimeOut = 60;		//60 minutos
+		event.getSession().setMaxInactiveInterval(sessionTimeOut * 60);
+		
+	}
+	
+	@Override
+	public void sessionDestroyed(HttpSessionEvent event) {
+		System.out.println("==== Session is destroyed ====");
+		
+	}
+}
